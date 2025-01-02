@@ -1,0 +1,40 @@
+# Node.js
+/node_modules
+/package-lock.json
+
+# Environment files
+.env
+config.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# MongoDB
+*.log
+dump/
+data/
+mongodb.log
+
+# Misc
+.DS_Store
+
+# IDE/Editor files
+.vscode/
+*.code-workspace
+
+# Dependency directories
+dev-data/
+
+# Debug files
+*.pem
+
+# Testing
+/coverage
+
+# Build files
+/build
+
+# Generated files
+*.tsbuildinfo
