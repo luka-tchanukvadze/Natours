@@ -23,5 +23,6 @@ app.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });
 
+// i will need this
 // "start:dev": "nodemon server.js",
 // "start:prod": "NODE_ENV=production nodemon server.js",
