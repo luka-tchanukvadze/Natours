@@ -1,20 +1,20 @@
 const express = require('express');
-const {
-  getAllUsers,
-  getUser,
-  createUser,
-  updateUser,
-  deleteUser,
-} = require('./../controllers/userController');
+const userController = require('./../controllers/userController');
+const authController = require('./../controllers/authController');
 
 const router = express.Router();
 
-router.route('/api/v1/users').get(getAllUsers).post(createUser);
+router.post('/signup', authController.signup);
 
 router
-  .route('api/v1/users/:id')
-  .get(getUser)
-  .patch(updateUser)
-  .delete(deleteUser);
+  .route('/')
+  .get(userController.getAllUsers)
+  .post(userController.createUser);
 
-module.exports = require;
+router
+  .route('/:id')
+  .get(userController.getUser)
+  .patch(userController.updateUser)
+  .delete(userController.deleteUser);
+
+module.exports = router;
