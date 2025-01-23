@@ -33,6 +33,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordChangedAt: req.body.passwordChangedAt,
     role: req.body.role,
     createPasswordResetToken: req.body.createPasswordResetToken,
+    active: req.body.active,
   });
 
   createSendToken(newUser, 201, res);
