@@ -29,12 +29,6 @@ exports.getAllTours = catchAsync(async (req, res, next) => {
       tours,
     },
   });
-
-  // const query = await Tour.find()
-  //   .where('duration')
-  //   .equals(5)
-  //   .where('difficulty')
-  //   .equals('easy');
 });
 
 exports.getTour = catchAsync(async (req, res, next) => {
