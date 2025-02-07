@@ -23,8 +23,37 @@ app.set('views', path.join(__dirname, 'views'));
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Set security HTTP headers
-app.use(helmet());
+// // Set security HTTP headers
+// app.use(helmet());
+
+// app.use((req, res, next) => {
+//   res.setHeader(
+//     'Content-Security-Policy',
+//     "default-src 'self'; script-src 'self' https://api.mapbox.com; style-src 'self' https://api.mapbox.com https://fonts.googleapis.com; img-src 'self' data: https://api.mapbox.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.mapbox.com; worker-src 'self' blob:"
+//   );
+//   next();
+// });
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", 'https://api.mapbox.com'],
+      styleSrc: [
+        "'self'",
+        'https://api.mapbox.com',
+        'https://fonts.googleapis.com',
+      ],
+      imgSrc: ["'self'", 'data:', 'https://api.mapbox.com', 'blob:'], // Add blob: for image issue
+      fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+      connectSrc: [
+        "'self'",
+        'https://api.mapbox.com',
+        'https://events.mapbox.com',
+      ], // Add events.mapbox.com
+      workerSrc: ["'self'", 'blob:'],
+    },
+  })
+);
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
