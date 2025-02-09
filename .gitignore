@@ -38,3 +38,8 @@ dev-data/
 
 # Generated files
 *.tsbuildinfo
+
+public/js/bundle.js
+public/js/bundle.js.map
+
+.cache
