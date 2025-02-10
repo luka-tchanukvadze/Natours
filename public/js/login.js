@@ -21,29 +21,18 @@ export const login = async (email, password) => {
     showAlert('error', error.response.data.message);
   }
 };
-// export const login = async (email, password) => {
-//   try {
-//     const res = await fetch('http://127.0.0.1:3000/api/v1/users/login', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({ email, password }),
-//     });
 
-//     const data = await res.json(); // Convert response to JSON
+export const logout = async () => {
+  console.log('clicked');
+  try {
+    const res = await axios({
+      method: 'GET',
+      url: 'http://127.0.0.1:3000/api/v1/users/logout',
+    });
 
-//     if (!res.ok) {
-//       throw new Error(data.message || 'Login failed');
-//     }
-
-//     if (data.status === 'success') {
-//       alert('Logged in successfully!');
-//       window.setTimeout(() => {
-//         location.assign('/');
-//       }, 1500);
-//     }
-//   } catch (error) {
-//     alert(error.message || 'An error occurred');
-//   }
-// };
+    if (res.data.status === 'success') location.reload(true);
+  } catch (error) {
+    console.log(error);
+    showAlert('error', 'Error loggin out! try again.');
+  }
+};
