@@ -39,19 +39,21 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", 'https://api.mapbox.com'],
+      scriptSrc: ["'self'", 'https://api.mapbox.com', 'https://js.stripe.com'],
       styleSrc: [
         "'self'",
         'https://api.mapbox.com',
         'https://fonts.googleapis.com',
       ],
-      imgSrc: ["'self'", 'data:', 'https://api.mapbox.com', 'blob:'], // Add blob: for image issue
+      imgSrc: ["'self'", 'data:', 'https://api.mapbox.com', 'blob:'],
       fontSrc: ["'self'", 'https://fonts.gstatic.com'],
       connectSrc: [
         "'self'",
         'https://api.mapbox.com',
         'https://events.mapbox.com',
-      ], // Add events.mapbox.com
+        'https://api.stripe.com',
+      ],
+      frameSrc: ["'self'", 'https://js.stripe.com'], // ✅ Allow Stripe iframes
       workerSrc: ["'self'", 'blob:'],
     },
   })
