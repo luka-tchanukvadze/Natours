@@ -316,10 +316,10 @@ body {
 }
 @media only screen and (max-width: 62.5em) {
   .header {
-    -webkit-box-orient: vertical;
+    /* -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
+    flex-direction: column; */
   }
 }
 .header__logo img {
@@ -1323,3 +1323,66 @@ body {
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
 }
+
+
+@media (max-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 900px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.header {
+  background-color: #444;
+  padding: 0 5rem;
+  height: 8rem;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav__el:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
