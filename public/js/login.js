@@ -23,7 +23,7 @@ export const login = async (email, password) => {
 };
 
 export const logout = async () => {
-  // console.log('clicked');
+  console.log('clicked');
   try {
     const res = await axios({
       method: 'GET',
