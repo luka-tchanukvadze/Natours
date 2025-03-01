@@ -62,7 +62,7 @@ This project is a fully functional tour booking API built with Node.js, Express.
 
 5.  **API Endpoints:**
 
-    * Refer to the Postman collection (if you provide one) or the API documentation for available endpoints.
+    * Contact me for the Postman collection or the API documentation for available endpoints.
 
 ## API Image
 
