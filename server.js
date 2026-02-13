@@ -20,7 +20,10 @@ mongoose
     useFindAndModify: false,
     useUnifiedTopology: true,
   })
-  .then((con) => console.log('DB connection successful'));
+  .then((con) => {
+    console.log('DB connection successful');
+    require('./utils/cron');
+  });
 
 const app = require('./app');
 
