@@ -66,7 +66,7 @@ app.use(
       frameSrc: ["'self'", 'https://js.stripe.com'],
       workerSrc: ["'self'", 'blob:'],
     },
-  })
+  }),
 );
 
 // Development logging
@@ -105,7 +105,7 @@ app.use(
       'difficulty',
       'price',
     ],
-  })
+  }),
 );
 
 app.use(compression());
@@ -119,14 +119,13 @@ app.use((req, res, next) => {
 
 // 3) Routes
 
-app.get('/api/health', (req, res) => res.status(200).json({ status: 'ok' }));
-
 app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/bookings', bookingRouter);
 
+app.get('/api/health', (req, res) => res.status(200).json({ status: 'ok' }));
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
