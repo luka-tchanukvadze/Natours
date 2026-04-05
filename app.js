@@ -119,6 +119,8 @@ app.use((req, res, next) => {
 
 // 3) Routes
 
+app.get('/api/health', (req, res) => res.status(200).json({ status: 'ok' }));
+
 app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);

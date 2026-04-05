@@ -22,7 +22,6 @@ mongoose
   })
   .then((con) => {
     console.log('DB connection successful');
-    require('./utils/cron');
   });
 
 const app = require('./app');
