@@ -92,7 +92,3 @@ Screenshots of the live version. The real project does more than what is shown h
 ![All tours](screenshots/01-all-tours.png)
 
 ![Tour details](screenshots/02-tour-details.png)
-
-![Book a tour](screenshots/03-book-tour.png)
-
-![Login](screenshots/04-login.png)
