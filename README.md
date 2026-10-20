@@ -2,6 +2,8 @@
 
 **Live Version:** [[Vercel Link]](https://natours-eight-psi.vercel.app/)
 
+**Screenshots:** images of the live version are at the end of this README, see [Sneak Peek](#sneak-peek).
+
 This project is a fully functional tour booking API built with Node.js, Express.js, and MongoDB. It's designed for scalability and security, providing a robust backend for tour booking applications.
 
 ## Features
