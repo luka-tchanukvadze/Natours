@@ -82,3 +82,15 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 ## Contact
 
 If you have any questions or suggestions, feel free to contact me.
+
+## Sneak Peek
+
+Screenshots of the live version. The real project does more than what is shown here, and if the live demo has issues before I get a chance to fix it, you can still take a look here.
+
+![All tours](screenshots/01-all-tours.png)
+
+![Tour details](screenshots/02-tour-details.png)
+
+![Book a tour](screenshots/03-book-tour.png)
+
+![Login](screenshots/04-login.png)
